@@ -286,10 +286,6 @@ SAR_comparison
 | File | Description |
 |------|-------------|
 | `1X70_prepared.pdb` | Cleaned structure |
-| `DPP4_receptor.pdbqt` | AutoDock Vina format |
-| `binding_site_coordinates.csv` | Grid box definition |
-| `docking_config.txt` | Vina configuration |
-| `protein_prep_log.txt` | Preparation steps |
 
 ---
 

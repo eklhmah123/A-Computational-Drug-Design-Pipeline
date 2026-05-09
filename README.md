@@ -18,89 +18,6 @@
 
 ---
 
-## 🚀 **Pipeline Workflow**
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ COMPUTATIONAL DRUG DISCOVERY PIPELINE │
-│ DPP-4 Inhibitors │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-│
-▼
-┌───────────────────────────────┐
-│ Step 1: Target Selection │
-│ (DPP-4 for Type 2 Diabetes) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 2: Data Acquisition │
-│ (ChEMBL → 1,247 compounds) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 3: Data Curation │
-│ (→ 847 compounds, pIC50) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 4: Descriptor Generation │
-│ (MW, LogP, HBD, HBA, Rings, │
-│ TPSA, RotatableBonds) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 5: QSAR Modeling │
-│ (Linear Regression + RF) │
-│ └──→ R² = 0.78, RMSE = 0.52 │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 6: SAR & Chemical Space │
-│ (PCA, Scaffold analysis) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 7: Virtual Screening │
-│ (100 compounds → top 10 hits) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 8: Protein Preparation │
-│ (AlphaFold → PDB: 1X70) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 9: Molecular Docking │
-│ (AutoDock Vina, 10 compounds) │
-│ └──→ Best: -8.20 kcal/mol │
-│ (Sorafenib) │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 10: ADMET Filtering │
-│ (Lipinski, Toxicity, Absorp.) │
-│ └──→ 6 compounds passed │
-└───────────────────────────────┘
-│
-▼
-┌───────────────────────────────┐
-│ Step 11: Lead Prioritization │
-│ (40% Dock + 40% ADMET + 20% │
-│ Diversity) │
-│ └──→ Top 3 Leads: │
-│ Sorafenib, Apigenin, │
-│ Quercetin │
-└───────────────────────────────┘
-
----
 
 ## 🎯 **Target Selection & Justification**
 
@@ -667,6 +584,22 @@ top 10 prioritise compound for DPP4
 | Top priority lead | Sorafenib (78.4) | Proceed to in vitro |
 | QSAR R² (test) | 0.78 | Good predictive power |
 | Active compounds identified | 234 (27.6%) | Validated dataset |
+
+## 🚀 **Pipeline Workflow Summary**
+
+| Step | Task | Description | Key Output |
+|:----:|------|-------------|------------|
+| **1** | Target Selection | DPP-4 for Type 2 Diabetes | Validated therapeutic target |
+| **2** | Data Acquisition | Retrieve bioactivity data from ChEMBL | 1,247 compounds |
+| **3** | Data Curation | Remove duplicates, invalid SMILES, salts; convert to pIC50 | 847 compounds |
+| **4** | Descriptor Generation | Calculate MW, LogP, HBD, HBA, Rings, TPSA, RotatableBonds | 8 physicochemical descriptors |
+| **5** | QSAR Modeling | Linear Regression + Random Forest models | R² = 0.78 (RF), RMSE = 0.52 |
+| **6** | SAR & Chemical Space Analysis | PCA visualization, scaffold analysis, active vs inactive comparison | Chemical space map, SAR rules |
+| **7** | Virtual Screening | QSAR-based potency prediction, diversity selection | 100 compounds → top 10 hits |
+| **8** | Protein Preparation | AlphaFold2 structure prediction, remove waters, add hydrogens | PDB: 1X70 (prepared) |
+| **9** | Molecular Docking | AutoDock Vina docking of 10 compounds | Best score: -8.20 kcal/mol (Sorafenib) |
+| **10** | ADMET Filtering | Lipinski Rule, toxicity risks, absorption profile | 6 compounds passed all filters |
+| **11** | Lead Prioritization | 40% Docking + 40% ADMET + 20% Diversity | **3 final leads** |
 
 
 aset

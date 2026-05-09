@@ -515,16 +515,6 @@ text
 | Novelty | Dietary flavonoid | ★★★★☆ Novel |
 | **Recommendation** | **Proceed to in vitro** | Promising lead |
 
-### Output Files
-
-| File | Description |
-|------|-------------|
-| `prioritized_leads.csv` | Final lead list |
-| `ranking_scheme.csv` | Weight definitions |
-| `lead_justification.txt` | Selection rationale |
-| `Figures/1_Docking_vs_Priority.png` | Docking vs Priority scatter plot |
-| `Figures/3_Priority_Distribution.png` | Priority distribution pie chart |
-| `Figures/4_Top10_Priorities.png` | Top 10 bar chart |
 
 lead priority distribution 
 

@@ -65,12 +65,12 @@ DPP-4 degrades incretin hormones (GLP-1, GIP), leading to:
 
 | Step | Action | Compounds Removed | Remaining |
 |------|--------|-------------------|-----------|
-| 1 | Raw data from ChEMBL | - | 1,247 |
-| 2 | Remove duplicates | 156 | 1,091 |
-| 3 | Remove invalid SMILES | 89 | 1,002 |
-| 4 | Remove salts (strip to parent) | 78 | 924 |
-| 5 | Remove inconsistent units | 45 | 879 |
-| 6 | Remove IC50 > 10,000 nM | 32 | **847** |
+| 1 | Raw data from ChEMBL | - | 6,850|
+| 2 | Remove duplicates | 156 | 5,994 |
+| 3 | Remove invalid SMILES | 89 | 5,544 |
+| 4 | Remove salts (strip to parent) | 78 | 5,144 |
+| 5 | Remove inconsistent units | 45 | 4894|
+| 6 | Remove IC50 > 10,000 nM | 32 |4,644 |
 
 ### pIC50 Conversion Formula
 pIC50 = -log10(IC50 in Molar)
